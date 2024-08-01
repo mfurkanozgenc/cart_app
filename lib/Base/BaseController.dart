@@ -4,6 +4,6 @@ class BaseController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    print('Sayfa Oluştu');
+    print('Sayfa Oluştu...');
   }
 }
