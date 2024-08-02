@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "938508548797",
+    "project_id": "activity-app-62503",
+    "storage_bucket": "activity-app-62503.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938508548797:android:6777142ceaf460dec815d4",
+        "android_client_info": {
+          "package_name": "com.zenisoft.activityApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqLleUulq7FD6cZ1NWKVgDBogwXl6yVNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

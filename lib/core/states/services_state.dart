@@ -1,3 +1,4 @@
+import 'package:proje/services/action_service.dart';
 import 'package:proje/services/database_service.dart';
 
 class ServicesState {
@@ -6,4 +7,5 @@ class ServicesState {
   ServicesState._internal();
 
   final databaseService = DatabaseService();
+  final actionService = ActionService();
 }

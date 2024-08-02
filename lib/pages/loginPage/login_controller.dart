@@ -7,14 +7,15 @@ class LoginController extends GetxController with BaseState {
   var userName = TextEditingController().obs;
   var password = TextEditingController().obs;
 
-  void Login() {
-    userName.value.text = 'Mustafa Furkan Özgenç';
-    // Get.to(HomeView(), transition: Transition.downToUp);
-    services.databaseService.loginInfo = 'Giriş Başarılı,Hoşgeldiniz';
-    // Get.toNamed(Routes.HomePage);
-    Get.offNamedUntil(
-        Routes.HomePage, (route) => route.settings.name == Routes.HomePage);
-    // Get.snackbar('Başarılı', 'Anasayfa Gidildi',
-    //     backgroundColor: Colors.deepOrange, colorText: Colors.white);
+  Future<void> login() async {
+    var result = await services.actionService
+        .login(userName.value.text, password.value.text);
+    if (result) {
+      services.databaseService.loginInfo = 'Giriş Başarılı,Hoşgeldiniz';
+      Get.toNamed(Routes.HomePage);
+    } else {
+      Get.snackbar('HATA', 'Giriş Yapılamadı !',
+          backgroundColor: Colors.white, colorText: Colors.deepOrange);
+    }
   }
 }

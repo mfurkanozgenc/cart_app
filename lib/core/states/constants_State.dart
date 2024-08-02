@@ -5,4 +5,5 @@ class ConstantsState {
   factory ConstantsState() => _instance;
   ConstantsState._internal();
   final colors = ColorConstants();
+  final globalConstants = GlobalConstants();
 }
