@@ -9,11 +9,9 @@ abstract class Pages {
   static List<GetPage> pages = [
     GetPage(
         name: Routes.LoginPage,
-        page: () => const LoginView(),
+        page: () => LoginView(),
         binding: LoginBindings()),
     GetPage(
-        name: Routes.HomePage,
-        page: () => const HomeView(),
-        binding: HomeBindings())
+        name: Routes.HomePage, page: () => HomeView(), binding: HomeBindings())
   ];
 }
