@@ -8,6 +8,7 @@ import 'package:proje/services/localStorage_service.dart';
 
 class ActionService {
   late CollectionReference response;
+  late CollectionReference settingsResponse;
   late DatabaseService db;
   late LocalStorageService storage;
   static final ActionService _instance = ActionService._internal();
@@ -18,6 +19,7 @@ class ActionService {
   }
   void _initialize() {
     response = FirebaseFirestore.instance.collection('users');
+    settingsResponse = FirebaseFirestore.instance.collection('settings');
     db = DatabaseService();
     storage = LocalStorageService();
   }
@@ -97,6 +99,60 @@ class ActionService {
       return true;
     } catch (error) {
       print('Kayıt Eklenemedi : $error');
+      return false;
+    }
+  }
+
+  Future<String> addSetting(
+      {required String name, required String icon}) async {
+    try {
+      var exsistControl =
+          await settingsResponse.where('name', isEqualTo: name).get();
+
+      if (exsistControl.docs.isNotEmpty) {
+        return 'Bu İsimle Kayıt Bulunmaktadır.';
+      }
+      await settingsResponse.add({
+        'name': name,
+        'icon': icon,
+        'date': DateTime.now().microsecondsSinceEpoch,
+      });
+      return 'success';
+    } catch (error) {
+      print('HATA : $error');
+      return '';
+    }
+  }
+
+  Future<String> updateSetting(
+      {required String name, required String icon, required String id}) async {
+    try {
+      print('isddd $id');
+      var exsistControl =
+          await settingsResponse.where('name', isEqualTo: name).get();
+
+      if (exsistControl.docs.isNotEmpty && exsistControl.docs.first.id != id) {
+        return 'Bu İsimle Kayıt Bulunmaktadır.';
+      }
+
+      await settingsResponse.doc(id).update({
+        'name': name,
+        'icon': icon,
+        'date': DateTime.now().microsecondsSinceEpoch,
+      });
+      return 'success';
+    } catch (error) {
+      print('HATA : $error');
+      return '';
+    }
+  }
+
+  Future<bool> deleteSetting({required String id}) async {
+    try {
+      await settingsResponse.doc(id).delete();
+      return true;
+    } catch (error) {
+      print('HATA : $error');
       return false;
     }
   }

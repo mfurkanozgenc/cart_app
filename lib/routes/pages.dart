@@ -5,6 +5,8 @@ import 'package:proje/pages/admin/settingsPage/settings_binding.dart';
 import 'package:proje/pages/admin/settingsPage/settings_view.dart';
 import 'package:proje/pages/cartPage/cart_binding.dart';
 import 'package:proje/pages/cartPage/cart_view.dart';
+import 'package:proje/pages/publicPages/navbar/navbar_binding.dart';
+import 'package:proje/pages/publicPages/navbar/navbar_view.dart';
 import 'package:proje/pages/user/createUser/createUser_bingind.dart';
 import 'package:proje/pages/user/createUser/createUser_view.dart';
 import 'package:proje/pages/loginPage/login_binding.dart';

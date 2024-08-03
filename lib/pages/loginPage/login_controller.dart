@@ -12,7 +12,7 @@ class LoginController extends GetxController with BaseState {
         .login(userName.value.text, password.value.text);
     if (result) {
       if (services.databaseService.isAdmin) {
-        Get.toNamed(Routes.CustomersPage);
+        Get.toNamed(Routes.SettingPage);
       } else {
         Get.toNamed(Routes.UserHomePage);
       }

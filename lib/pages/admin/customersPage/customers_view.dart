@@ -4,23 +4,17 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:proje/core/base/base_state.dart';
 import 'package:proje/pages/admin/customersPage/customers_controller.dart';
+import 'package:proje/pages/publicPages/navbar/navbar_view.dart';
 
 class CustomersView extends GetView<CustomersController> with BaseState {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavbarView(),
       appBar: AppBar(
         title: Text('Kullanıcılar'.toUpperCase()),
         centerTitle: true,
         backgroundColor: constants.colors.generalColor,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: IconButton(
-                onPressed: controller.exitToApp,
-                icon: const Icon(Icons.exit_to_app)),
-          )
-        ],
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance.collection('users').snapshots(),

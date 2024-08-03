@@ -11,4 +11,5 @@ class ColorConstants {
   final enabledBorder = Colors.grey;
   final focusedBorder = Colors.black;
   final errorBorder = const Color(0xFFee403c);
+  final errorBorderGeneralColor = Colors.yellow;
 }
