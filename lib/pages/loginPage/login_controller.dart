@@ -11,11 +11,26 @@ class LoginController extends GetxController with BaseState {
     var result = await services.actionService
         .login(userName.value.text, password.value.text);
     if (result) {
-      services.databaseService.loginInfo = 'Giriş Başarılı,Hoşgeldiniz';
-      Get.toNamed(Routes.HomePage);
+      if (services.databaseService.isAdmin) {
+        Get.toNamed(Routes.CustomersPage);
+      } else {
+        Get.toNamed(Routes.UserHomePage);
+      }
     } else {
       Get.snackbar('HATA', 'Giriş Yapılamadı !',
           backgroundColor: Colors.white, colorText: Colors.deepOrange);
     }
   }
+
+  void openCreatePage() {
+    Get.toNamed(Routes.CreateUserPage);
+  }
 }
+
+
+    // services.actionService.addUser(
+    //     fullName: 'Mustafa Furkan Özgenç',
+    //     email: 'furkanozgenc@hotmail.com',
+    //     password: '397249',
+    //     isAdmin: true,
+    //     image: '');

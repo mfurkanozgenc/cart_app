@@ -15,7 +15,7 @@ class LoginView extends GetView<LoginController> with BaseState {
             decoration: BoxDecoration(
                 color: constants.colors.generalColor,
                 borderRadius: BorderRadius.circular(10)),
-            height: Get.height * 0.2,
+            height: Get.height * 0.4,
             width: Get.width,
             child: Center(
                 child: Text(
@@ -37,6 +37,7 @@ class LoginView extends GetView<LoginController> with BaseState {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextFormField(
+                          controller: controller.userName.value,
                           decoration: InputDecoration(
                               label: Text(
                                 'Kullanıcı Adı',
@@ -57,6 +58,7 @@ class LoginView extends GetView<LoginController> with BaseState {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextFormField(
+                          controller: controller.password.value,
                           decoration: InputDecoration(
                               label: Text(
                                 'Şifre',
@@ -88,7 +90,7 @@ class LoginView extends GetView<LoginController> with BaseState {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: controller.openCreatePage,
                           child: Text(
                             'Kayıt Ol',
                             style:
@@ -106,7 +108,11 @@ class LoginView extends GetView<LoginController> with BaseState {
             height: Get.height * .05,
             width: Get.width,
             color: Colors.transparent,
-            child: Center(child: Text(constants.globalConstants.appVersion)),
+            child: Center(
+                child: Text(
+              constants.globalConstants.appVersion,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            )),
           ),
         ],
       ),

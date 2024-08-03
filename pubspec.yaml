@@ -11,7 +11,12 @@ dependencies:
     sdk: flutter
   get:
   firebase_core:
+  firebase_storage:
   cloud_firestore:
+  image_picker:
+  intl:
+  hive:
+  hive_flutter:
 
 dev_dependencies:
   flutter_test:
@@ -20,3 +25,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+  - assets/images/

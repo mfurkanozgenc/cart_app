@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "938508548797",
-    "project_id": "activity-app-62503",
-    "storage_bucket": "activity-app-62503.appspot.com"
+    "project_number": "152075493872",
+    "project_id": "cart-app-92c24",
+    "storage_bucket": "cart-app-92c24.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:938508548797:android:6777142ceaf460dec815d4",
+        "mobilesdk_app_id": "1:152075493872:android:fa58d80f7f4b2e5d3bbd35",
         "android_client_info": {
-          "package_name": "com.zenisoft.activityApp"
+          "package_name": "zenisoft.cart.app"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBqLleUulq7FD6cZ1NWKVgDBogwXl6yVNA"
+          "current_key": "AIzaSyDDcYK64RxKgTiUmqwsrhunBQ5x8LKkb4E"
         }
       ],
       "services": {
