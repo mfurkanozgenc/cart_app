@@ -69,6 +69,12 @@ class ActionService {
     }
   }
 
+  Future<void> getUseList(String userId) async {
+    try {
+      await response.where('field');
+    } catch (e) {}
+  }
+
   Future<bool> updateUser(
       {required String fullName,
       required String image,

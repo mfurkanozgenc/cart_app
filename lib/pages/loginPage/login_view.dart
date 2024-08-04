@@ -27,11 +27,11 @@ class LoginView extends GetView<LoginController> with BaseState {
             )),
           ),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: SingleChildScrollView(
-                child: SizedBox(
-                  width: Get.width * 0.8,
+            child: Form(
+              key: controller.formkey.value,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: SingleChildScrollView(
                   child: Column(
                     children: [
                       Padding(

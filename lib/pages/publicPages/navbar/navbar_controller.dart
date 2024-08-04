@@ -18,9 +18,7 @@ class NavbarController extends GetxController with BaseState {
   Future<void> onInit() async {
     super.onInit();
     user.value = services.databaseService.loginUser;
-    if (user.value.fullName.isEmpty) {
-      user.value = (await services.storageService.refreshPage())!;
-    }
+    user.value = (await services.storageService.refreshPage())!;
   }
 
   void exitToApp() {

@@ -6,13 +6,14 @@ import 'package:proje/routes/routes.dart';
 class LoginController extends GetxController with BaseState {
   var userName = TextEditingController().obs;
   var password = TextEditingController().obs;
+  var formkey = new GlobalKey<FormState>().obs;
 
   Future<void> login() async {
     var result = await services.actionService
         .login(userName.value.text, password.value.text);
     if (result) {
       if (services.databaseService.isAdmin) {
-        Get.toNamed(Routes.SettingPage);
+        Get.toNamed(Routes.CustomersPage);
       } else {
         Get.toNamed(Routes.UserHomePage);
       }

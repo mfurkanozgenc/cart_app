@@ -1,9 +1,7 @@
 import 'dart:convert';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import 'package:proje/core/base/base_state.dart';
 import 'package:proje/pages/admin/settingsPage/settings_controller.dart';
 import 'package:proje/pages/publicPages/navbar/navbar_view.dart';
@@ -18,19 +16,14 @@ class SettingsView extends GetView<SettingsController> with BaseState {
         centerTitle: true,
         backgroundColor: constants.colors.generalColor,
         actions: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: IconButton(
-                    onPressed: () {
-                      controller.clear();
-                      _displayModal(context, false, '');
-                    },
-                    icon: const Icon(Icons.add)),
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: IconButton(
+                onPressed: () {
+                  controller.clear();
+                  _displayModal(context, false, '');
+                },
+                icon: const Icon(Icons.add)),
           )
         ],
       ),
@@ -40,54 +33,52 @@ class SettingsView extends GetView<SettingsController> with BaseState {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
-          return Expanded(
-            child: ListView.builder(
-              itemCount: snapshot.data!.docs.length,
-              itemBuilder: (context, index) {
-                var setting = snapshot.data!.docs[index];
-                var icon = setting['icon'];
-                return Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: ListTile(
-                    onTap: () {
-                      String imageBase64 = (setting['icon'] != null &&
-                              setting['icon'].toString().isNotEmpty)
-                          ? setting['icon']
-                          : '';
+          return ListView.builder(
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder: (context, index) {
+              var setting = snapshot.data!.docs[index];
+              var icon = setting['icon'];
+              return Padding(
+                padding: const EdgeInsets.all(10),
+                child: ListTile(
+                  onTap: () {
+                    String imageBase64 = (setting['icon'] != null &&
+                            setting['icon'].toString().isNotEmpty)
+                        ? setting['icon']
+                        : '';
 
-                      controller.name.value.text = setting['name'];
-                      controller.base64Image.value = imageBase64;
-                      _displayModal(context, true, setting.id);
-                    },
-                    shape: ContinuousRectangleBorder(
-                        side: BorderSide(
-                            color: constants.colors.generalColor, width: 1)),
-                    leading: icon.length > 0
-                        ? Image.memory(
-                            base64Decode(icon),
-                            width: Get.height * .05,
-                            height: Get.height * .05,
-                            fit: BoxFit.cover,
-                          )
-                        : const Icon(Icons.settings),
-                    title: Text(
-                      setting['name'].toString(),
-                      textAlign: TextAlign.center,
-                    ),
-                    trailing: Padding(
-                      padding: const EdgeInsets.only(right: 5),
-                      child: IconButton(
-                          onPressed: () =>
-                              controller.deleteSetting(setting.id.toString()),
-                          icon: Icon(
-                            Icons.delete,
-                            color: constants.colors.generalColor,
-                          )),
-                    ),
+                    controller.name.value.text = setting['name'];
+                    controller.base64Image.value = imageBase64;
+                    _displayModal(context, true, setting.id);
+                  },
+                  shape: ContinuousRectangleBorder(
+                      side: BorderSide(
+                          color: constants.colors.generalColor, width: 1)),
+                  leading: icon.length > 0
+                      ? Image.memory(
+                          base64Decode(icon),
+                          width: Get.height * .05,
+                          height: Get.height * .05,
+                          fit: BoxFit.cover,
+                        )
+                      : const Icon(Icons.settings),
+                  title: Text(
+                    setting['name'].toString(),
+                    textAlign: TextAlign.center,
                   ),
-                );
-              },
-            ),
+                  trailing: Padding(
+                    padding: const EdgeInsets.only(right: 5),
+                    child: IconButton(
+                        onPressed: () =>
+                            controller.deleteSetting(setting.id.toString()),
+                        icon: Icon(
+                          Icons.delete,
+                          color: constants.colors.generalColor,
+                        )),
+                  ),
+                ),
+              );
+            },
           );
         },
       ),
@@ -95,7 +86,6 @@ class SettingsView extends GetView<SettingsController> with BaseState {
   }
 
   Future _displayModal(BuildContext context, bool isUpdate, String id) {
-    print(isUpdate);
     return showModalBottomSheet(
         context: context,
         backgroundColor: constants.colors.generalColor,
@@ -104,8 +94,9 @@ class SettingsView extends GetView<SettingsController> with BaseState {
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
         builder: (context) => Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom),
+              child: SizedBox(
                 height: Get.height * 0.40,
                 child: Form(
                   key: controller.formKey.value,

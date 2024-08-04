@@ -1,20 +1,16 @@
-2024/08/04-00:37:38.419 500c Reusing MANIFEST C:\Users\MUSTAF~1\AppData\Local\Temp\flutter_tools.1e43704d\flutter_tools_chrome_device.d76b907\Default\shared_proto_db/MANIFEST-000001
-2024/08/04-00:37:38.419 500c Recovering log #16
-2024/08/04-00:37:38.421 500c Reusing old log C:\Users\MUSTAF~1\AppData\Local\Temp\flutter_tools.1e43704d\flutter_tools_chrome_device.d76b907\Default\shared_proto_db/000016.log 
-2024/08/04-00:37:38.422 500c Delete type=0 #3
-2024/08/04-00:37:38.422 500c Delete type=0 #4
-2024/08/04-00:37:38.422 500c Delete type=0 #7
-2024/08/04-00:37:38.422 500c Delete type=0 #10
-2024/08/04-00:37:38.422 500c Delete type=0 #13
-2024/08/04-00:37:58.840 500c Level-0 table #20: started
-2024/08/04-00:37:58.843 500c Level-0 table #20: 139036 bytes OK
-2024/08/04-00:37:58.844 500c Delete type=0 #16
-2024/08/04-00:37:58.844 38c Compacting 4@0 + 1@1 files
-2024/08/04-00:37:58.849 38c Generated table #21@0: 1192 keys, 148575 bytes
-2024/08/04-00:37:58.849 38c Compacted 4@0 + 1@1 files => 148575 bytes
-2024/08/04-00:37:58.850 38c compacted to: files[ 0 1 1 0 0 0 0 ]
-2024/08/04-00:37:58.850 38c Delete type=2 #8
-2024/08/04-00:37:58.850 38c Delete type=2 #11
-2024/08/04-00:37:58.850 38c Delete type=2 #14
-2024/08/04-00:37:58.850 38c Delete type=2 #17
-2024/08/04-00:37:58.850 38c Delete type=2 #20
+2024/08/04-10:41:53.612 5990 Reusing MANIFEST C:\Users\MUSTAF~1\AppData\Local\Temp\flutter_tools.45be3af\flutter_tools_chrome_device.ff7cae71\Default\shared_proto_db/MANIFEST-000001
+2024/08/04-10:41:53.613 5990 Recovering log #19
+2024/08/04-10:41:53.614 5990 Reusing old log C:\Users\MUSTAF~1\AppData\Local\Temp\flutter_tools.45be3af\flutter_tools_chrome_device.ff7cae71\Default\shared_proto_db/000019.log 
+2024/08/04-10:41:53.615 5990 Delete type=0 #3
+2024/08/04-10:41:53.615 5990 Delete type=0 #4
+2024/08/04-10:41:53.615 5990 Delete type=0 #7
+2024/08/04-10:41:53.615 5990 Delete type=2 #8
+2024/08/04-10:41:53.615 5990 Delete type=0 #10
+2024/08/04-10:41:53.615 5990 Delete type=2 #11
+2024/08/04-10:41:53.615 5990 Delete type=0 #13
+2024/08/04-10:41:53.615 5990 Delete type=2 #14
+2024/08/04-10:41:53.615 5990 Delete type=0 #16
+2024/08/04-10:41:53.616 5990 Delete type=2 #17
+2024/08/04-10:42:29.310 5990 Level-0 table #24: started
+2024/08/04-10:42:29.314 5990 Level-0 table #24: 137355 bytes OK
+2024/08/04-10:42:29.315 5990 Delete type=0 #19

@@ -27,6 +27,8 @@ class LocalStorageService {
 
   Future<UserModel?> refreshPage() async {
     Map<String, dynamic> userMap = jsonDecode(ReadData('CartAppUserInfo'));
-    return UserModel.fromJson(userMap);
+    var user = UserModel.fromJson(userMap);
+    print('KULLANICI BİLGİSİ ${user.fullName}');
+    return user;
   }
 }
